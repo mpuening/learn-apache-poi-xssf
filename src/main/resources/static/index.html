@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="/webjars/jquery/3.4.1/jquery.min.js"></script>
+<script src="/webjars/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+<link rel="stylesheet"
+	href="/webjars/bootstrap/3.4.1/css/bootstrap.min.css" />
+<title>Learn Apache POI XSSF</title>
+</head>
+
+<body>
+
+	<nav class="navbar navbar-inverse">
+		<div class="container">
+			<div class="navbar-header">
+				<a class="navbar-brand" href="#">Learn Apache POI XSSF</a>
+			</div>
+		</div>
+	</nav>
+	<div class="container">
+		<div class="page-header">
+			<p class="lead">Test uploading, downloading and processing
+				spreadsheets.</p>
+		</div>
+		<div class="row form-group bg-info"
+			style="padding: 1em; vertical-align: middle;">
+			<div class="col-md-3">Step 1: Generate Random Data</div>
+			<div class="col-md-4">
+				<form action="/test-widgets" method="get">
+					<div class="form-group">
+						<label for="rows">Number of Rows</label> <input type="number"
+							name="rows" value="10000" class="form-control">
+					</div>
+					<input type="submit" name="testfile" value="Generate Test File">
+				</form>
+			</div>
+		</div>
+		<div class="row form-group bg-warning" style="padding: 1em">
+			<div class="col-md-3">Step 2: Upload Test Data</div>
+			<div class="col-md-4">
+				<form action="/upload-widgets" method="post"
+					enctype="multipart/form-data">
+					<div class="form-group">
+						<label for="file">File</label><input type="file" name="file"
+							value="file" class="form-control">
+					</div>
+					<div class="form-group">
+						<label for="batchSize">Batch Size</label> <input type="number"
+							name="batchSize" value="1000" class="form-control">
+					</div>
+					<div class="container">
+						<div class="col-md-2">
+							<div class="form-group">
+								<input type="radio" name="parseType" value="sax"
+									checked="checked"> SAX<br> <input type="radio"
+									name="parseType" value="dom"> DOM<br>
+							</div>
+						</div>
+						<div class="col-md-2">
+							<div class="form-group">
+								<input type="radio" name="persistenceType" value="jdbc"
+									checked="checked"> JDBC<br> <input type="radio"
+									name="persistenceType" value="jpa"> JPA<br>
+							</div>
+						</div>
+					</div>
+					<input type="submit" name="upload" value="Upload File">
+				</form>
+			</div>
+		</div>
+		<div class="row form-group bg-success" style="padding: 1em">
+			<div class="col-md-3">Step 3: Download Test Data</div>
+			<div class="col-md-4">
+				<form action="/download-widgets" method="get">
+					<input type="submit" name="downloadfile" value="Download File">
+				</form>
+			</div>
+		</div>
+		<div class="row form-group bg-danger" style="padding: 1em">
+			<div class="col-md-3">Step 4: Start Over</div>
+			<div class="col-md-4">
+				<form action="/truncate-widgets" method="post">
+					<input type="submit" name="truncate" value="Truncate Table">
+				</form>
+			</div>
+		</div>
+	</div>
+
+</body>
+
+</html>

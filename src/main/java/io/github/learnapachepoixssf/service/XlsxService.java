@@ -85,8 +85,7 @@ public class XlsxService {
 			// keep 100 rows in memory, exceeding rows will be flushed to disk
 			workbook = new SXSSFWorkbook(100);
 			Sheet sheet = workbook.createSheet();
-			Stream<Widget> widgets = widgetRepository.streamAll();
-
+			Stream<Widget> widgets = widgetRepository.findAll((widget, cq, cb) -> cb.conjunction());
 			widgets.forEach(widget -> {
 				Row row = sheet.createRow(rowNumber.get());
 				Cell column1 = row.createCell(0);

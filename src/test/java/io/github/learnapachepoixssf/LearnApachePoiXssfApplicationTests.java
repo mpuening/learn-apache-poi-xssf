@@ -17,16 +17,13 @@ import org.apache.commons.io.FileUtils;
 import org.apache.poi.openxml4j.opc.OPCPackage;
 import org.apache.poi.openxml4j.opc.PackageAccess;
 import org.apache.poi.xssf.usermodel.XSSFComment;
-import org.junit.Test;
-import org.junit.runner.RunWith;
+import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.test.context.junit4.SpringRunner;
 
 import io.github.learnapachepoixssf.service.XlsxService;
 import io.github.learnapachepoixssf.service.XlsxStreamParser;
 
-@RunWith(SpringRunner.class)
 @SpringBootTest
 public class LearnApachePoiXssfApplicationTests {
 

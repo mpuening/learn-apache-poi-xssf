@@ -1,7 +1,7 @@
 package io.github.learnapachepoixssf;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertTrue;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import java.io.File;
 import java.io.FileOutputStream;
@@ -62,7 +62,7 @@ public class LearnApachePoiXssfApplicationTests {
 			printer.close();
 			boolean isSame = FileUtils.contentEquals(new File("src/test/resources/expected-testdata.csv"),
 					new File(actualFilename));
-			assertTrue("Result CSV file does not match expected results", isSame);
+			assertTrue(isSame, "Result CSV file does not match expected results");
 		}
 	}
 

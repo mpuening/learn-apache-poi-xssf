@@ -34,7 +34,7 @@ public class LearnApachePoiXssfApplicationTests {
 	public void convertSpreadsheetToCSV() throws Exception {
 		String actualFilename = "target/actual-testdata.csv";
 		final FileWriter out = new FileWriter(actualFilename);
-		final CSVPrinter printer = new CSVPrinter(out, CSVFormat.DEFAULT);
+		final CSVPrinter printer = new CSVPrinter(out, CSVFormat.DEFAULT.withRecordSeparator("\n"));
 		int NUMBER_OF_COLUMNS = 5;
 		try (OPCPackage p = OPCPackage.open("src/test/resources/testdata.xlsx", PackageAccess.READ)) {
 			XlsxStreamParser xlsxStreamParser = new XlsxStreamParser(p, NUMBER_OF_COLUMNS,

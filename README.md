@@ -1,6 +1,8 @@
 Learn Apache POI XSSF
 =====================
 
+[![Continuous Integration](https://github.com/mpuening/learn-apache-poi-xssf/actions/workflows/ci.yml/badge.svg)](https://github.com/mpuening/learn-apache-poi-xssf/actions/workflows/ci.yml)
+
 This project includes example code for uploading and downloading Excel Spreadsheets
 using Apache POI XSSF APIs and data from a database.
 
